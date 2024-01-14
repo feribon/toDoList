@@ -1,0 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana;
+  /* color: #fff; */
+  color: #333;
+}
+body {
+  background-image: url("../img/bg6.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+button {
+  background-color: #a064a0;
+  color: #2f186e;
+  border: 2px solid #2f186e;
+  padding: 0.3rem 0.6rem;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: #2f186e;
+  color: #fff;
+  border-color: #fff;
+}
+button i {
+  color: #2f186e;
+  font-weight: bold;
+  pointer-events: none;
+}
+button:hover > i {
+  color: #fff;
+}
+select {
+  padding: 0.25rem 0.5rem;
+}
+.esconder {
+  display: none;
+}
+.container {
+  max-width: 450px;
+  margin: 3rem auto 0;
+  background-color: rgb(187, 135, 206);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+header {
+  text-align: center;
+  padding: 0 1rem 1rem;
+  border-bottom: 1px solid #fff;
+}
+#form,
+#edit {
+  padding: 1rem;
+  border-bottom: 1px solid #fff;
+}
+#form p,
+#edit p {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.form-control {
+  display: flex;
+}
+.form-control input {
+  margin-right: 0.3rem;
+}
+#cancel-btn {
+  margin-top: 1rem;
+}
+#barra {
+  padding: 1rem;
+  border-bottom: 1px solid #fff;
+  display: flex;
+}
+#barra h4 {
+  margin-bottom: 0.5rem;
+}
+#busca {
+  border-right: 1px solid #fff;
+  margin-right: 1rem;
+  padding-right: 1rem;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+#busca form {
+  display: flex;
+}
+#busca input {
+  width: 100%;
+  margin-right: 0.3rem;
+}
+.filtro {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+}
+.filro select {
+  flex: 1;
+}
+.todo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #fff;
+  transition: 0.5s;
+}
+.todo button {
+  margin-left: 0.3rem;
+}
+h3 {
+  flex: 1;
+  font-size: 0.9rem;
+}
+.feito {
+  background-color: #7864aa;
+}
+.feito h3 {
+  color: #fff;
+  text-decoration: line-through;
+  font-style: italic;
+}
