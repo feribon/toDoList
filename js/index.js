@@ -6,6 +6,8 @@ const editInput = document.querySelector("#edit-input");
 const inputSearch = document.querySelector("#input-busca");
 const cancelEditBtn = document.querySelector("#cancel-btn");
 const btnEditar = document.getElementById("btn-editar");
+const filtroFeito = document.getElementById("select-filter");
+let todosOsItens = document.querySelectorAll(".todo");
 
 todoForm.addEventListener("submit", (ele) => {
   ele.preventDefault();
@@ -60,7 +62,7 @@ document.addEventListener("click", (ele) => {
   if (targetEle.classList.contains("pen")) {
     editInput.value = parentEle.innerText;
     pegaId = parentEle.children[0].id;
-    toggleEdit(parentEle.children[0].innerText);
+    toggleEdit();
   }
   if (targetEle.classList.contains("remove")) {
     if (confirm("Tem certeza que deseja remover a tarefa da lista")) {
@@ -79,6 +81,32 @@ btnEditar.addEventListener("click", (ele) => {
   editarTarefa(editInput.value, pegaId);
 });
 
-function editarTarefa(valor, id) {
+const editarTarefa = (valor, id) => {
   document.getElementById(id).innerText = valor;
-}
+};
+
+filtroFeito.addEventListener("change", (ele) => {
+  const filtrar = ele.target.value;
+  const todos = document.querySelectorAll(".todo");
+  switch (filtrar) {
+    case "all":
+      todos.forEach((todo) => (todo.style.display = "flex"));
+      break;
+    case "done":
+      todos.forEach((todo) =>
+        todo.classList.contains("feito")
+          ? (todo.style.display = "flex")
+          : (todo.style.display = "none")
+      );
+      break;
+    case "todo":
+      todos.forEach((todo) =>
+        !todo.classList.contains("feito")
+          ? (todo.style.display = "flex")
+          : (todo.style.display = "none")
+      );
+      break;
+    default:
+      break;
+  }
+});
