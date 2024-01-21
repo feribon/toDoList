@@ -7,7 +7,7 @@ const inputSearch = document.querySelector("#input-busca");
 const cancelEditBtn = document.querySelector("#cancel-btn");
 const btnEditar = document.getElementById("btn-editar");
 const filtroFeito = document.getElementById("select-filter");
-let todosOsItens = document.querySelectorAll(".todo");
+const todos = document.querySelectorAll(".todo");
 
 todoForm.addEventListener("submit", (ele) => {
   ele.preventDefault();
@@ -87,7 +87,6 @@ const editarTarefa = (valor, id) => {
 
 filtroFeito.addEventListener("change", (ele) => {
   const filtrar = ele.target.value;
-  const todos = document.querySelectorAll(".todo");
   switch (filtrar) {
     case "all":
       todos.forEach((todo) => (todo.style.display = "flex"));
@@ -109,4 +108,16 @@ filtroFeito.addEventListener("change", (ele) => {
     default:
       break;
   }
+});
+
+inputSearch.addEventListener("keyup", (ele) => {
+  const search = ele.target.value;
+  todos.forEach((todo) => {
+    const todoTitle = todo.querySelector("h3").innerText.toLowerCase();
+    todo.style.display = "flex";
+
+    if (!todoTitle.includes(search)) {
+      todo.style.display = "none";
+    }
+  });
 });
